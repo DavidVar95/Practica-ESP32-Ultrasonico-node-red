@@ -1,10 +1,10 @@
-# Practica Distancia con Sensor ultrasonico y node-red
-Este repositorio muestra como podemos programar una ESP32 con un sensor ultrasonico y mandar los datos a un 
+# Practica ESP32 con Sensor ultrasonico y node-red
+Este repositorio muestra como podemos mandasr datos a un servidor y poder graficarlos
 ## Introducción
 
 ### Descripción
 
-En esta practica utilizamos la ```Esp32``` con un un sensor ultrasonico
+En esta practica utilizamos la ```Esp32``` con un un sensor ultrasonico y en el programa mandamos los datos que obtiene el ESP32 y los mandamos a un servidor publico y con node red podemos visualizar los datos y graficar la informacion
 
 ## Material Necesario
 
@@ -12,7 +12,7 @@ Para realizar esta practica necesitas lo siguiente
 
 - [WOKWI](https://https://wokwi.com/)
 - Tarjeta ESP 32
-- Sensor DHT-22
+- Sensor ultrasonico
 - node-red
 
 
@@ -181,11 +181,11 @@ TempAndHumidity  data = dhtSensor.getTempAndHumidity();
 ```
 2. Realizar la conecion del circuito
 
-![](https://github.com/DavidVar95/Practica-con-DHT-22-Y-node-red/blob/main/Captura%20de%20pantalla%202023-06-16%2021.14.27.png?raw=true)
+![](https://github.com/DavidVar95/Practica-ESP32-Ultrasonico-node-red/blob/main/Captura%20de%20pantalla%202023-06-17%2013.21.02.png?raw=true)
 
-3. Se realiza el programa en bloques para node red
+3. Se realiza el diagrama de bloques en node red
 
-![](https://github.com/DavidVar95/Practica-con-DHT-22-Y-node-red/blob/main/Captura%20de%20pantalla%202023-06-16%2021.53.14.png?raw=true)
+![](https://github.com/DavidVar95/Practica-ESP32-Ultrasonico-node-red/blob/main/Captura%20de%20pantalla%202023-06-17%2013.24.01.png?raw=true)
 
 4. colocamos un bloque mqttin y lo vinculamos con el programa en WOKWI
 
@@ -199,35 +199,29 @@ TempAndHumidity  data = dhtSensor.getTempAndHumidity();
 
 ![](https://github.com/DavidVar95/Practica-con-DHT-22-Y-node-red/blob/main/Captura%20de%20pantalla%202023-06-16%2022.07.58.png?raw=true)
 
-7. Colocamos dos bloques function y lo configuramos con el siguente codigo
+7. Colocamos un bloque function y lo configuramos con el siguente codigo
 
 ```
-msg.payload = msg.payload.TEMPERATURA;
-msg.topic = "TEMPERATURA";
+msg.payload = msg.payload.DISTANCIA;
+msg.topic = "DISTANCIA";
 return msg;
 
 ```
-```
-msg.payload = msg.payload.HUMEDAD;
-msg.topic = "HUMEDAD";
-return msg;
+![](https://github.com/DavidVar95/Practica-ESP32-Ultrasonico-node-red/blob/main/Captura%20de%20pantalla%202023-06-17%2013.28.50.png?raw=true)
 
-```
 
 # Resultados
 
-
-![](https://github.com/DavidVar95/Practica-con-DHT-22-Y-node-red/blob/main/Captura%20de%20pantalla%202023-06-16%2022.13.58.png?raw=true)
 
 
 En el node-red podememos ver los datos que esta tomando el ESP32
 
 
-![](https://github.com/DavidVar95/Practica-con-DHT-22-Y-node-red/blob/main/Captura%20de%20pantalla%202023-06-16%2022.19.09.png?raw=true))
+![](https://github.com/DavidVar95/Practica-ESP32-Ultrasonico-node-red/blob/main/Captura%20de%20pantalla%202023-06-17%2013.30.44.png?raw=true)
 
-![](https://github.com/DavidVar95/Practica-con-DHT-22-Y-node-red/blob/main/Captura%20de%20pantalla%202023-06-16%2022.19.19.png?raw=true))
+![](https://github.com/DavidVar95/Practica-ESP32-Ultrasonico-node-red/blob/main/Captura%20de%20pantalla%202023-06-17%2013.30.56.png?raw=truee)
 
-![](https://github.com/DavidVar95/Practica-con-DHT-22-Y-node-red/blob/main/Captura%20de%20pantalla%202023-06-16%2022.19.29.png?raw=true))
+![](https://github.com/DavidVar95/Practica-ESP32-Ultrasonico-node-red/blob/main/Captura%20de%20pantalla%202023-06-17%2013.31.04.png?raw=true)
 
 # Créditos
 
